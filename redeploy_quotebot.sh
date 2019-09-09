@@ -1,5 +1,7 @@
 #!/bin/bash
 
+_temp_tag=$1
+
 echo "_temp_tag environment variable is: $_temp_tag"
 
 if [ "$_temp_tag" == "latest" ] || [ "$_temp_tag" == "development" ]
