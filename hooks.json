@@ -1,0 +1,20 @@
+[
+	{
+		"id":"redeploy-quotebot",
+		"execute-command":"./redeploy_quotebot.sh",
+		"command-working-directory":"~/p4h_webhooks/",
+    		"pass-arguments-to-command":
+		[
+			{
+				"source": "payload",
+				"name": "push_data.tag",
+				"env": "_temp_tag"
+			},
+			{
+				"source": "payload",
+				"name": "push_data.pusher",
+				"env": "_temp_pusher"
+			}
+		]
+	}
+]
