@@ -9,6 +9,7 @@ then
 	echo "Updating $_temp_tag image"
 	docker ps -q -a -f "ancestor=cyzhang/discord_quote_bot:$_temp_tag" |xargs docker stop
 	docker ps -q -a -f "ancestor=cyzhang/discord_quote_bot:$_temp_tag" |xargs docker rm
+	docker pull cyzhang/discord_quote_bot:$_temp_tag
 
 	if [ "$_temp_tag" == "latest" ]
 	then
