@@ -44,10 +44,12 @@ tail -F p4h_webhooks.log
     ![image](https://user-images.githubusercontent.com/4514597/91671853-058db100-eadf-11ea-8b6a-a2463e7d9919.png)
     
     Currently:
-        - `http://ec2-[id].compute.amazonaws.com:9000/hooks/status/` (for html testing)
-        - `http://ec2-[id].compute.amazonaws.com:9000/hooks/redeploy-quotebot/`
-        - `http://ec2-[id].compute.amazonaws.com:9000/hooks/notify_dev_latest_image/`
-        - `http://ec2-[id].compute.amazonaws.com:9000/hooks/notify_dev_development_image/`
+    
+    
+    - `http://ec2-[id].compute.amazonaws.com:9000/hooks/status/` (for html testing)
+    - `http://ec2-[id].compute.amazonaws.com:9000/hooks/redeploy-quotebot/`
+    - `http://ec2-[id].compute.amazonaws.com:9000/hooks/notify_dev_latest_image/`
+    - `http://ec2-[id].compute.amazonaws.com:9000/hooks/notify_dev_development_image/`
         
 ## Troubleshooting
 
