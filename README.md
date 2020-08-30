@@ -27,6 +27,6 @@ tail -F p4h_webhooks.log
     - For the main distribution, clone this repo ([here](https://github.com/zhangchuck/p4h_webhooks))
 3. Run Webhook in terminal
     ```
-    sudo -E ~/go/bin/webhook -hooks p4h_webhooks/hooks.json - verbose > p4h_webhooks.log &
+    sudo -E ~/go/bin/webhook -hooks p4h_webhooks/hooks.json -verbose > p4h_webhooks.log &
     ```
 4. Setup a webhook on [Docker Hub](https://cloud.docker.com/repository/docker/cyzhang/discord_quote_bot/webhooks) that points to the deploy machine's endpoint (e.g., `http://ec2-[id].compute.amazonaws.com:9000/hooks/redeploy-quotebot/`)

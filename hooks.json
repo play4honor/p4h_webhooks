@@ -3,6 +3,7 @@
 		"id":"redeploy-quotebot",
 		"execute-command":"/home/ec2-user/p4h_webhooks/redeploy_quotebot.sh",
 		"command-working-directory":"/home/ec2-user/p4h_webhooks/",
+		"response-message":"Attempting to redeploy quotebot...",
     		"parse-parameters-as-json":
 		[
 			{
@@ -19,6 +20,18 @@
 			{
 				"source": "payload",
 				"name": "push_data.pusher"
+			}
+		]
+	},
+	{
+		"id":"status",
+		"response-message":"adnanh/webhook is working",
+		"execute-command":"echo",
+		"pass-arguments-to-command":
+		[
+			{
+				"source":"string",
+				"name":"Status: adnanh/webhook is working"
 			}
 		]
 	}
