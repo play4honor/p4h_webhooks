@@ -34,5 +34,101 @@
 				"name":"Status: adnanh/webhook is working"
 			}
 		]
+	},
+	{
+		"id":"notify_dev_latest_image",
+		"execute-command":"curl",
+		"pass-arguments-to-command":
+		[
+			{
+				"source":"string",
+				"name":"--header"
+			},
+			{
+				"source":"string",
+				"name":"Content-Type: application/json"
+			},
+			{
+				"source":"string",
+				"name":"--request"
+			},
+			{
+				"source":"string",
+				"name":"POST"
+			},
+			{
+				"source":"string",
+				"name":"--data"
+			},
+			{
+				"source":"string",
+				"name":"{\"content\":\"*just rebuilt the **latest** image.*\"}"
+			},
+			{
+				"source":"string",
+				"name":"{{ getenv "DISCORD_DEV_NOTIFICATION_WEBHOOK" }}"
+			}
+		],
+		"trigger-rule":
+		{
+			"match":
+			{
+				"type":"value",
+				"value":"latest",
+				"parameter":
+				{
+					"source":"payload",
+					"name":"push_data.tag"
+				}
+			}
+		}
+	},
+	{
+		"id":"notify_dev_development_image",
+		"execute-command":"curl",
+		"pass-arguments-to-command":
+		[
+			{
+				"source":"string",
+				"name":"--header"
+			},
+			{
+				"source":"string",
+				"name":"Content-Type: application/json"
+			},
+			{
+				"source":"string",
+				"name":"--request"
+			},
+			{
+				"source":"string",
+				"name":"POST"
+			},
+			{
+				"source":"string",
+				"name":"--data"
+			},
+			{
+				"source":"string",
+				"name":"{\"content\":\"*just rebuilt the **development** image.*\"}"
+			},
+			{
+				"source":"string",
+				"name":"{{ getenv "DISCORD_DEV_NOTIFICATION_WEBHOOK" }}"
+			}
+		],
+		"trigger-rule":
+		{
+			"match":
+			{
+				"type":"value",
+				"value":"development",
+				"parameter":
+				{
+					"source":"payload",
+					"name":"push_data.tag"
+				}
+			}
+		}
 	}
 ]
