@@ -14,6 +14,14 @@ sudo -E ~/go/bin/webhook -hooks ~/p4h_webhooks/hooks.json -verbose -template > ~
 tail -F p4h_webhooks.log
 ```
 
+### Turn off Webhook
+
+```
+sudo netstat -peanut
+# Look for the process that is on port 9000
+sudo kill [PID]
+```
+
 ## Setup
 
 ### Create a webhook on Discord
