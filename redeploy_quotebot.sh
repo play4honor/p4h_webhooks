@@ -22,6 +22,8 @@ then
 	    		-d -e DISCORD_QUOTEBOT_TOKEN=$DISCORD_QUOTEBOT_DEV_TOKEN \
 			cyzhang/discord_quote_bot:development
 	fi
+	
+	docker system prune -f
 else
 	echo "Tag is $_temp_tag; not updating."
 fi
